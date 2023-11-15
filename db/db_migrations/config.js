@@ -17,23 +17,25 @@ const config = {
   smtpEmail: process.env.SMTP_EMAIL,
   smtpPassword: process.env.SMTP_PASSWORD,
 }
-const USER = encodeURIComponent(config.dbUser);
-const PASSWORD = encodeURIComponent(config.dbPassword);
-const URI = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
-//const URI = `mysql://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
+module.exports = {
+  development: {
+    url: config.dbUrl,
+    dialect: 'postgres',
+  },
+  production: {
+    url: config.dbUrl,
+    dialect: 'postgres',
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false
+      }
+    }
+  }
+}
 
 
-module.exports = { development: {
-  url: URI,
-  dialect: 'postgres',
-  //dialect: 'mysql',
-},
-production: {
-  url: URI,
-  dialect: 'postgres',
-  //dialect: 'mysql',
-}
-}
+
+
 // export const development = {
 //   url: config.dbUrl,
 //   dialect: 'postgres',
