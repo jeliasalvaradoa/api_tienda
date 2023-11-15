@@ -215,5 +215,17 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+postgres_data
+mysql_data
+db/migrations-dev
+docker-compose copy.yml
+index copy.js
+server-with-sequelize2.js
+nodemailer.js
+pass-hash.js
+pass-verify.js
+token-sign.js
+token-verify.js
+category.json
 notas
 # End of https://www.toptal.com/developers/gitignore/api/node,windows,linux,macos
