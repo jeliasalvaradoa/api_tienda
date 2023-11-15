@@ -15,6 +15,12 @@ export const createApp = (services) => {
   app.use(corsMiddleware());
   import('./utils/auth/index.js');
 
+  app.get('/', (req, res) => {
+    res.send(`
+    <h1>Mi servidor express</h1>
+ `);
+  });
+
   app.get('/nueva-ruta', checkApiKey, (req, res) => {
     res.send('Hola mi server en express');
   });
