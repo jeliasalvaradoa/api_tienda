@@ -27,14 +27,7 @@ app.use(express.static("public"));
     res.send('Hola mi server en express');
   });
 
-  routerApi(app, {
-    productModel: services.productModel,
-    categoryModel: services.categoryModel,
-    userModel: services.userModel,
-    customerModel: services.customerModel,
-    orderModel: services.orderModel,
-    authModel:services.authModel
-   });
+  routerApi(app,services);
 
   app.use(logErrors)
   app.use (ormErrorHandler)

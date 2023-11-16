@@ -8,8 +8,14 @@ import { createOrderRouter } from './order.router.js';
 import { createProfileRouter } from './profile.router.js';
 import { createAuthRouter } from './auth.router.js';
 
-export default function routerApi(app,
-  {productModel, categoryModel, userModel, customerModel, orderModel, authModel}) {
+export default function routerApi(app, services) {
+
+  const productModel = services.productModel
+  const categoryModel = services.categoryModel
+  const userModel = services.userModel
+  const customerModel = services.customerModel
+  const orderModel = services.orderModel
+  const authModel = services.authModel
   const router = Router();
   app.use('/api/v1', router);
   router.use('/products', createProductRouter({ productModel }));
