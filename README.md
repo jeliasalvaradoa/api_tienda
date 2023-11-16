@@ -18,22 +18,11 @@ Este proyecto es la actualización ya que la anterior estaba realizada con commo
 * /api/v1/categories,
 * /api/v1/products
 
-<p>
-        La diferencia importante es que esta desarrollado para ser más escalable con inyección de dependencia usando un
-        patrón de diseño. Se pueden proporcionar distintos orígenes de datos, como se puede ver en server-with-local.js,
-        server-with-postgres.js (solo se usa el ejemplo con product.service.js) y server-with-sequelize, que fue el
-        que se desarrolló por completo ya que es útil hacer uso de ORM.
-    </p>
+La diferencia importante es que esta desarrollado para ser más escalable con inyección de dependencia usando un patrón de diseño. Se pueden proporcionar distintos orígenes de datos, como se puede ver en server-with-local.js, server-with-postgres.js (solo se usa el ejemplo con product.service.js) y server-with-sequelize, que fue el que se desarrolló por completo ya que es útil hacer uso de ORM.
 
-    <p>
-        Es importante mencionar que lo único que cambia son los modelos de donde se servirían los datos, pero los
-        controllers, los routers y los schemas funcionan independientemente de donde vengan los datos. También se
-        realizaron pruebas con MySQL en docker-compose.yml; se ve la configuración que se realizó. Básicamente, sería
-        hacer prácticamente lo mismo que se hizo con Postgres, ya que con Sequelize solo le tengo que enviar el
-        parámetro de la database_url. La base de datos se desplegó en [fl0.com](https://app.fl0.com)
-        (te da una opción free y hasta ahora no tiene límite expiracón,por lo que sirve para más tiempo de prueba). El repositorio esta en [https://github.com/jeliasalvaradoa/api_tienda](https://github.com/jeliasalvaradoa/api_tienda) y el despliegue se hizo en [https://api-tienda.onrender.com](https://api-tienda.onrender.com) (el despligue es my eficiente te da soporte para muchas tecnologías incluyendo Docker, recomiendo hacer uso de este contenedor el menos que tiene render.com es que solo te deja crear una database free por 90 dias; es por ello que solo desplegue la aplicación. En conclusión cada uno con sus ventajas y desventaja desde mi punto de vista.)
-    </p>
-## Tecnología de desarrollo
+Es importante mencionar que lo único que cambia son los modelos de donde se servirían los datos, pero los controllers, los routers y los schemas funcionan independientemente de donde vengan los datos. También se realizaron pruebas con MySQL en docker-compose.yml; se ve la configuración que se realizó. Básicamente, sería hacer prácticamente lo mismo que se hizo con Postgres, ya que con Sequelize solo le tengo que enviar el parámetro de la database_url. La base de datos se desplegó en [fl0.com](https://app.fl0.com) (te da una opción free y hasta ahora no tiene límite expiracón,por lo que sirve para más tiempo de prueba). El repositorio esta en [https://github.com/jeliasalvaradoa/api_tienda](https://github.com/jeliasalvaradoa/api_tienda) y el despliegue se hizo en [https://api-tienda.onrender.com](https://api-tienda.onrender.com) (el despligue es my eficiente te da soporte para muchas tecnologías incluyendo Docker, recomiendo hacer uso de este contenedor el menos que tiene render.com es que solo te deja crear una database free por 90 dias; es por ello que solo desplegue la aplicación. En conclusión cada uno con sus ventajas y desventaja desde mi punto de vista.)
+  
+  ## Tecnología de desarrollo
 ***
 Lista de tecnologías usadas en este proyecto:
 * [Sistema operativo Debian](https://www.debian.org/distrib/index.es.html): Versión 12 
