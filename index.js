@@ -13,6 +13,7 @@ export const createApp = (services) => {
   const app = express();
   app.use(json());
   app.use(corsMiddleware());
+  app.disable('x-powered-by');
   import('./utils/auth/index.js');
 
 //   app.get('/', (req, res) => {
