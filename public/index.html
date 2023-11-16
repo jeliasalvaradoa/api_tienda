@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Tienda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        h3 {
+            color: #777;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ol {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>API Tienda</h1>
+
+    <p>
+      Este proyecto es una actualización del repositorio de GitHub
+      <a href="https://github.com/jeliasalvaradoa/mybackenstore" target="_blank">mybackenstore</a>
+      y que se desplegó en <a href="https://mybackenapi.onrender.com" target="_blank">mybackenapi.onrender.com</a>.
+  </p>
+
+        <h1>Tabla de contenido</h1>
+    <ol>
+        <li><a href="#info">Información General</a></li>
+        <li><a href="#tecnologias">Tecnología de desarrollo</a></li>
+        <li><a href="#instalacion">Instalación</a></li>
+        <li><a href="#colaboracion">Colaboración</a></li>
+    </ol>
+    <h2 id="info">Información General</h2>
+
+    <p>
+        Este proyecto es una actualización; ya que la anterior estaba realizada con CommonJS y esta versión está actualizada
+        usando ESModule y un patron de diseño mas escalable con inyección de dependencia. Básicamente, funciona de la misma manera; los endpoints son los siguientes:
+    </p>
+
+    <ul>
+        <li>/api/v1/users</li>
+        <li>/api/v1/profile</li>
+        <li>/api/v1/customers</li>
+        <li>/api/v1/orders/id</li>
+        <li>/api/v1/categories</li>
+        <li>/api/v1/products</li>
+    </ul>
+
+    <p>
+        La diferencia importante es que esta desarrollado para ser más escalable con inyección de dependencia usando un
+        patrón de diseño. Se pueden proporcionar distintos orígenes de datos, como se puede ver en server-with-local.js,
+        server-with-postgres.js (solo se usa el ejemplo con product.service.js) y server-with-sequelize, que fue el
+        que se desarrolló por completo ya que es útil hacer uso de ORM.
+    </p>
+
+    <p>
+        Es importante mencionar que lo único que cambia son los modelos de donde se servirían los datos, pero los
+        controllers, los routers y los schemas funcionan independientemente de donde vengan los datos. También se
+        realizaron pruebas con MySQL en docker-compose.yml; se ve la configuración que se realizó. Básicamente, sería
+        hacer prácticamente lo mismo que se hizo con Postgres, ya que con Sequelize solo le tengo que enviar el
+        parámetro de la database_url. La base de datos se desplegó en <a href="https://app.fl0.com" target="_blank">fl0.com</a>
+        (te da una opción free y hasta ahora no tiene límite expiracón,por lo que sirve para más tiempo de prueba). El repositorio esta en <a href="https://github.com/jeliasalvaradoa/api_tienda" target="_blank">https://github.com/jeliasalvaradoa/api_tienda</a> y el despliegue se hizo en
+        <a href="https://api-tienda.onrender.com" target="_blank">https://api-tienda.onrender.com</a>(el despligue es my eficiente te da soporte para muchas tecnologías incluyendo Docker, recomiendo hacer uso de este contenedor
+        el menos que tiene render.com es que solo te deja crear una database free por 90 dias; es por ello que solo desplegue la aplicación. En conclusión cada uno con sus ventajas y desventaja desde mi punto de vista.)
+    </p>
+
+    <h2 id="tecnologias">Tecnología de Desarrollo</h2>
+
+    <p>Lista de tecnologías usadas en este proyecto:</p>
+
+    <ul>
+        <li><a href="https://www.debian.org/distrib/index.es.html" target="_blank">Sistema operativo Debian</a>: Versión 12</li>
+        <li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>: Versión 1.84.2</li>
+        <li><a href="https://github.com/nvm-sh/nvm" target="_blank">Node JS instalación con nvm</a>: Versión 21.1.0</li>
+        <li><a href="https://github.com/jeliasalvaradoa/api_tienda/blob/main/package.json" target="_blank">Librerias</a>: Ver package.json</li>
+        <li><a href="https://docs.docker.com/engine/install/debian/" target="_blank">Contenedor Docker</a>: Versión 24.0.7</li>
+        <li><a href="https://hub.docker.com/_/postgres" target="_blank">PostgreSQL</a>: Versión 13</li>
+        <li><a href="https://github.com/jeliasalvaradoa/api_tienda/blob/main/docker-compose.yml" target="_blank">Docker-Compose PostgreSQL 13</a>: Ver Docker-compose.yml</li>
+        <li><a href="https://hub.docker.com/_/mysql" target="_blank">MySQL</a>: Versión 5</li>
+        <li><a href="https://sequelize.org/docs/v6/getting-started/" target="_blank">Sequelize ORM</a>: Versión 6</li>
+        <li><a href="https://git-scm.com/" target="_blank">Control de Versiones local Git</a>: Versión 2.39.2</li>
+        <li><a href="https://github.com/jeliasalvaradoa" target="_blank">Control de Versiones en la nube GitHub</a></li>
+    </ul>
+    <h2 id="instalacion">Instalación</h2>
+
+    <p><strong>Pasos para el deploy:</strong></p>
+
+    <ol>
+        <li>Crear una cuenta en <a href="https://app.fl0.com" target="_blank">fl0.com</a>.</li>
+        <ul>
+            <li>En tu usuario aparecerán dos opciones: "Your apps" y "Manage your apps and databases".</li>
+            <li>
+                <strong>Development:</strong> Permite crear una app y una database gratis. <strong>Production:</strong> Es
+                de pago.
+            </li>
+            <li>
+                En "Development", haz clic en "+Add new" y selecciona "Postgres database". Aquí solo se agrega el nombre
+                de la base de datos; los demás datos los asigna fl0 automáticamente y los puedes ver en "Connection info":
+                <ul>
+                    <li>Hostname</li>
+                    <li>Port</li>
+                    <li>Database</li>
+                    <li>User</li>
+                    <li>Password</li>
+                    <li>Database URL: Esta URL la debemos copiar para pasarla como variables de ambiente</li>
+                </ul>
+            </li>
+        </ul>
+
+        <li>En <a href="https://api-tienda.onrender.com" target="_blank">render.com</a> después de crear la cuenta:</li>
+        <ul>
+            <li>Hacer clic en "New +" y seleccionar "Web Service".</li>
+            <li>Nos indicará que seleccionemos el repositorio (puede ser de GitHub o GitLab).</li>
+            <li>
+                Una vez seleccionado el repositorio, nos enviará a otra página donde debemos indicar los siguientes datos:
+                <ul>
+                    <li>Name: Indicar nombre del servicio web.</li>
+                    <li>Region: Indicar región donde se ejecutará el servicio.</li>
+                    <li>Branch: Indicar la rama. En este caso, seleccionamos "main".</li>
+                    <li>Root: Directorio opcional, si quieres indicar una ruta para el deploy (por lo general, es la
+                        raíz).</li>
+                    <li>Runtime: Seleccionamos la rutina. En este caso, lo hicimos usando Docker.</li>
+                </ul>
+            </li>
+            <li>Seleccionar el plan de pago. En este caso, seleccionamos "Free".</li>
+            <li>
+                Paso muy importante antes de presionar el botón "Create Web Service": Agregar las variables de entorno.
+                Hacer clic en "Advanced" y se desplegará un botón de "Add Environment Variables" con el cual debemos
+                crear las variables de entorno que están en el Dockerfile:
+                <ul>
+                    <li>NODE_ENV</li>
+                    <li>DATABASE_URL</li>
+                    <li>API_KEY</li>
+                    <li>JWT_SECRET</li>
+                    <li>SMTP_EMAIL</li>
+                    <li>SMTP_PASSWORD</li>
+                </ul>
+                <strong>Nota:</strong> Asignar los valores a cada variable según corresponda.
+            </li>
+            <li>
+                Los demás campos se dejan como están por defecto. Recomiendo no modificarlos si no sabes lo que haces a
+                menos que seas experto.
+            </li>
+            <li>Finalizamos presionando el botón "Create Web Service".</li>
+        </ul>
+
+        <li>Esperar unos minutos y estará tu API REST desplegada, lista para ser consumida.</li>
+    </ol>
+    <p><strong>Instalación Local</strong></p>
+    <ol>
+        <li>git clone https://github.com/jeliasalvaradoa/api_tienda.git</li>
+        <li>cd ../path/del directorio/</li>
+        <li>crear .env</li>
+        <li>npm run migrations:run</li>
+        <li>npm run start</li>
+    </ol>
+
+    <p><strong>Nota:</strong> No se puede olvidar que se debe crear el archivo .env donde se colocan los valores de todas tus variables de ambiente, sobre todo la Database_URL que indica el origen de los datos; para ello se deja en el repositorio un .env-example que indica cuáles son las variables de ambiente. Agregar los valores que sean necesarios según el caso.</p>
+
+    <h2 id="colaboracion">Colaboración</h2>
+    <p>Totalmente abierto a cualquier aporte. Si hay alguna recomendación de cómo se mejoraría el código de este proyecto, estoy aquí para ayudar.</p>
+
+    <footer>
+      <hr>
+      <p>
+          Desarrollado por José Alvarado<br>
+          GitHub: <a href="https://github.com/jeliasalvaradoa" target="_blank">jeliasalvaradoa</a><br>
+          LinkedIn: <a href="https://www.linkedin.com/in/jose-alvarado-6b92bb1a2/" target="_blank">jose-alvarado-6b92bb1a2</a>
+      </p>
+  </footer>
+</body>
+
+</html>
