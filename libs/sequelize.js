@@ -3,6 +3,7 @@ import { config } from '../config/config.js';
 import setupModels from '../db/models/index.js';
 
 const options = {
+  host: config.dbHost,
   dialect: 'postgres',
   logging: config.isProd ? false : true,
 }
@@ -10,13 +11,14 @@ const options = {
 if (config.isProd) {
   options.dialectOptions = {
     ssl: {
-      require: true,
       rejectUnauthorized: false
     }
   }
 }
 
-export const sequelize = new Sequelize(config.dbUrl, options);
+///export const sequelize = new Sequelize(config.dbUrl, options);
+
+export const sequelize = new Sequelize(config.dbName, config.dbUser, config.dbPassword, options);
 
 setupModels(sequelize);
 

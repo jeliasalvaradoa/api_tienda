@@ -227,5 +227,7 @@ pass-verify.js
 token-sign.js
 token-verify.js
 category.json
+config_antes_supabase.js
+sequelize_antes_supabase.js
 notas
 # End of https://www.toptal.com/developers/gitignore/api/node,windows,linux,macos
