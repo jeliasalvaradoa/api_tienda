@@ -19,17 +19,17 @@ const config = {
 }
 module.exports = {
   development: {
-    url: config.dbUrl,
-    //username: "",
-   /// password: "",
-   /// database: "",
-   /// host: "",
+   // url: config.dbUrl,
+    username: config.dbUser,
+    password: config.dbPassword,
+    database: config.dbPassword,
+    host: config.dbHost,
     dialect: 'postgres',
-  //  dialectOptions: {
-  ///    ssl: {
-   ///     rejectUnauthorized: false
-     // }
-  ///  }
+    dialectOptions: {
+    ssl: {
+       rejectUnauthorized: false
+     }
+   }
   },
   production: {
   //  url: config.dbUrl,
@@ -40,7 +40,7 @@ module.exports = {
     dialect: 'postgres',
     dialectOptions: {
       ssl: {
-        require: true,
+        //require: true,
         rejectUnauthorized: false
       }
     }
