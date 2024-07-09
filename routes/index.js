@@ -18,7 +18,7 @@ export default function routerApi(app, services) {
      orderModel,
      authModel
   } = services
-  
+
   /** si quieres asi tambien funciona**/
 
   // const productModel = services.productModel

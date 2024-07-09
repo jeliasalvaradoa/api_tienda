@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import passport from 'passport';
-
 import { AuthController } from '../controllers/auth.controllers.js';
 import validatorHandler from '../middlewares/validator.handler.js';
 import {
